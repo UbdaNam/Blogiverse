@@ -1,15 +1,81 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
+:root {
+  --primary: #c6dce4;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+main {
+  min-height: 100vh;
+  padding-block: 2rem;
+  padding-inline: min(9rem, 5vw) min(11rem, 7vw);
+  background-color: #daeaf1;
+}
+
+/* Users-List style */
+
+.list-container,
+.user-profile {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.user-card {
+  display: flex;
+  align-items: center;
+  border-radius: 10px;
+  padding: 0.7rem;
+  background-color: var(--primary);
+  gap: 1rem;
+}
+
+.card-info {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.card-info > p {
+  align-self: flex-end;
+}
+
+/* Profile style */
+
+.profile-bio {
+  display: flex;
+  flex-direction: column;
+  padding: 0.7rem;
+  background-color: var(--primary);
+  gap: 1rem;
+}
+
+.post-card-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.post-card {
+  display: flex;
+  flex-direction: column;
+  padding: 0.7rem;
+  background-color: var(--primary);
+}
+
+.post-card > h3 {
+  margin-bottom: 1rem;
+}
+
+.post-card > p {
+  margin-bottom: 0.2rem;
+}
+
+.post-card > h4 {
+  font-weight: 300;
+  align-self: flex-end;
+}
