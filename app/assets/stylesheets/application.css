@@ -11,7 +11,7 @@
 main {
   min-height: 100vh;
   padding-block: 2rem;
-  padding-inline: min(9rem, 5vw) min(11rem, 7vw);
+  padding-inline: calc(min(9rem, 5vw)) calc(min(11rem, 7vw));
   background-color: #daeaf1;
 }
 
