@@ -1,8 +1,10 @@
 class UsersController < ApplicationController
-  def index; end
+  def index
+    @users = User.all
+  end
 
   def show
     @user_id = params[:id]
-    puts @user_id
+    @user = User.find(@user_id)
   end
 end

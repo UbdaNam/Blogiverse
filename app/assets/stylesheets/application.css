@@ -1,15 +1,134 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
+:root {
+  --primary: #c6dce4;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+main {
+  min-height: 100vh;
+  padding-block: 2rem;
+  padding-inline: calc(min(9rem, 5vw)) calc(min(11rem, 7vw));
+  background-color: #daeaf1;
+}
+
+a {
+  text-decoration: none;
+  color: #0a0a0a;
+  cursor: pointer;
+}
+
+/* Users-List style */
+
+.list-container,
+.user-profile {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.user-card {
+  display: flex;
+  align-items: center;
+  border-radius: 10px;
+  padding: 0.7rem;
+  background-color: var(--primary);
+  gap: 1rem;
+}
+
+.card-info {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.card-info > p {
+  align-self: flex-end;
+}
+
+/* Profile style */
+
+.profile-bio {
+  display: flex;
+  flex-direction: column;
+  padding: 0.7rem;
+  background-color: var(--primary);
+  gap: 1rem;
+}
+
+.post-card-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.post-card {
+  display: flex;
+  flex-direction: column;
+  padding: 0.7rem;
+  background-color: var(--primary);
+  border-radius: 10px;
+}
+
+.post-card > h3 {
+  margin-bottom: 1rem;
+}
+
+.post-card > p {
+  margin-bottom: 0.2rem;
+}
+
+.post-card > h4 {
+  font-weight: 300;
+  align-self: flex-end;
+}
+
+.user-profile > a {
+  align-self: center;
+}
+
+.see-all-btn {
+  padding: 0.2rem 0.3rem;
+  border-radius: 5px;
+  border: none;
+}
+
+/* User posts style */
+
+.user-posts-container {
+  display: grid;
+  gap: 1rem;
+}
+
+.user-post {
+  display: grid;
+  gap: 0.2rem;
+  align-items: flex-start;
+}
+
+.comments-container {
+  background-color: var(--primary);
+  padding: 0.3rem 1rem;
+  border-radius: 8px;
+}
+
+.pagination {
+  margin-top: 1rem;
+  justify-self: center;
+}
+
+/* single Post style */
+
+.relative {
+  position: relative;
+}
+
+.relative h5 {
+  position: absolute;
+  top: 4%;
+  right: 2%;
+}

@@ -1,1 +1,18 @@
-<h1>Show post with postId: <%= @post_id %> for userId: <%= @user_id %></h1>
+<section class="single-post">
+  <div class="user-post">
+    <div class="post-card relative">
+      <h3>Post #<%=@post.id%></h3>
+      <h5>Comments: <%=@post.comments_counter%>, Likes: <%=@post.likes_counter%></h5>
+      <p><%=@post.text%></p>
+    </div>
+    <div class="comments-container">
+      <%if @post.comments.empty? %>
+        <p>No comments found!</p>
+      <% else %>
+        <% @post.comments.each do |comment| %>
+          <p><%=@user_name%>: <%=comment.text%></p>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+</section>
