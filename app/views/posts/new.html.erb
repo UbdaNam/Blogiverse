@@ -1,0 +1,18 @@
+<h1>New Post</h1>
+
+<% if @post.errors.any? %>
+  <% @post.errors.full_messages.each do |message| %>
+    <p><%= message %><p>
+  <% end %>
+<% end %>
+<%= form_with url: "/users/21/posts/create", model: @post do |form|%>
+  <div>
+    <%= form.label :title %>
+    <%= form.text_field :title %>
+  </div>
+  <div>
+  <%= form.label :text %>
+  <%= form.text_field :text %>
+  </div>
+  <%= form.submit "Add Post" %>
+<%end%>

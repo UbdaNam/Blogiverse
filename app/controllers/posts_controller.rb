@@ -12,4 +12,27 @@ class PostsController < ApplicationController
     @user_name = User.find(@user_id).name
     puts @post.comments.to_json
   end
+
+  def new
+    @post = Post.new
+  end
+
+  def create
+    @post = Post.new(post_params)
+    @post.author_id = current_user.id
+    @post.likes_counter = 0
+    @post.comment_counter = 0
+
+    if @post.save
+      redirect_to users_path
+    else
+      render :new
+    end
+  end
+
+  private
+
+  def post_params
+    params.require(:post).permit(:title, :text)
+  end
 end
