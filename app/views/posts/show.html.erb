@@ -1,73 +1,18 @@
 <section class="single-post">
   <div class="user-post">
     <div class="post-card relative">
-      <h3>Post #3</h3>
-      <h5>Comments: X, Likes: Y</h5>
-      <p>
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit
-        a nostrum placeat voluptates, cupiditate voluptatem et numquam pariatur
-        veritatis dolore ipsam recusandae minus quas cumque quo suscipit?
-        Temporibus voluptatibus, sapiente blanditiis, corrupti cumque quas
-        suscipit voluptatum mollitia nostrum quod explicabo nulla perferendis
-        sit impedit ipsa natus delectus unde. Possimus vitae culpa perspiciatis
-        voluptas perferendis et, magnam tenetur mollitia tempora sequi inventore
-        asperiores modi excepturi molestias laboriosam nihil sapiente
-        voluptatibus, obcaecati, ex a eveniet in illo. Corporis neque dicta
-        exercitationem voluptatem debitis placeat consectetur illum distinctio
-        laudantium dolorem, beatae dolores libero rerum error minima aspernatur
-        sed ab ipsum excepturi rem ipsa voluptates fugit. Natus ipsum atque
-        porro explicabo! Hic quod quam, pariatur delectus voluptate ab
-        reiciendis in debitis neque a! Dignissimos necessitatibus voluptate
-        fugit numquam praesentium amet aliquid quaerat laboriosam saepe ipsa?
-        Voluptatum suscipit asperiores aut aspernatur ipsam dolorem perspiciatis
-        omnis maiores accusantium doloremque quas, magnam aliquid velit
-        blanditiis dolor beatae ut facilis veniam similique consequatur
-        incidunt, culpa fuga recusandae? Adipisci hic illo voluptate earum fugit
-        harum ratione deleniti inventore. Qui perferendis reiciendis ipsum,
-        aspernatur voluptatem sed libero, ipsa porro praesentium dignissimos
-        nemo debitis reprehenderit placeat voluptatibus? Eligendi at animi eum
-        tempora. Mollitia quam explicabo provident laboriosam cupiditate at
-        doloribus dolores vel officia! Commodi aspernatur autem fugiat
-        voluptates nulla ullam, dolorem sequi nobis, itaque pariatur ab quisquam
-        quod veniam excepturi consequuntur unde deserunt. Eius odit ratione
-        dolores rem rerum nesciunt ipsum illum corrupti tempora, doloremque
-        voluptates suscipit ab dolorum, officia ad quia explicabo quis, esse
-        pariatur? Accusantium error saepe, laudantium ipsa necessitatibus quae
-        facilis, veniam neque accusamus libero vel provident facere officia
-        totam amet. Accusantium odio obcaecati fuga et pariatur, ipsa vel
-        numquam asperiores provident fugiat ipsam qui deserunt architecto
-        dolorem quod eius animi rem esse voluptates modi adipisci voluptatum
-        earum temporibus. Cupiditate quam et ipsam incidunt placeat doloremque?
-        Repudiandae quibusdam possimus mollitia consectetur voluptate
-        consequuntur ipsa esse deserunt ipsam, sequi omnis id libero officia
-        aliquam molestiae dignissimos officiis in. Veritatis voluptates numquam
-        est suscipit libero qui architecto deserunt soluta ab nesciunt optio
-        odio, molestiae eveniet adipisci. Blanditiis provident rerum id. Nostrum
-        ex illo adipisci voluptatem. Possimus similique, aliquam eos doloribus
-        minus magnam ex quas dolor! Nemo, eos! Ea itaque id assumenda nam nisi
-        maxime inventore labore excepturi aperiam. Laborum, unde earum. Delectus
-        in cupiditate alias dolores voluptatum, aliquam non assumenda aliquid
-        nostrum velit numquam praesentium consequuntur iusto repudiandae
-        provident dignissimos animi voluptate molestiae, harum tenetur maiores
-        porro minus accusamus aut. Consectetur, iusto dolorem voluptates
-        explicabo illum veritatis reprehenderit odit perferendis eum. Laboriosam
-        hic ullam enim repudiandae doloribus natus tenetur veritatis illum
-        error. Et nisi deleniti tempora fugit, facere asperiores dolores quae
-        suscipit ut omnis molestias, incidunt modi minus! Odio autem consectetur
-        quibusdam sapiente commodi esse saepe hic. Ipsum repellat non rerum
-        porro repudiandae delectus omnis libero sit, a inventore vitae explicabo
-        ea odio quam? Voluptatibus ab id laudantium dicta voluptates. Dolorem
-        fugit quisquam voluptatum aspernatur molestias laboriosam, vitae nobis,
-        inventore dolor nisi laborum dignissimos quibusdam nam nostrum aperiam
-        repellat voluptate ipsam dolorum quas repudiandae officiis! Quisquam
-        blanditiis eligendi fuga dolores!
-      </p>
+      <h3>Post #<%=@post.id%></h3>
+      <h5>Comments: <%=@post.comments_counter%>, Likes: <%=@post.likes_counter%></h5>
+      <p><%=@post.text%></p>
     </div>
     <div class="comments-container">
-      <p>Username: comment 1</p>
-      <p>Username: comment 1</p>
-      <p>Username: comment 1</p>
-      <p>Username: comment 1</p>
+      <%if @post.comments.empty? %>
+        <p>No comments found!</p>
+      <% else %>
+        <% @post.comments.each do |comment| %>
+          <p><%=@user_name%>: <%=comment.text%></p>
+        <% end %>
+      <% end %>
     </div>
   </div>
 </section>

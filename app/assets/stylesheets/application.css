@@ -15,6 +15,12 @@ main {
   background-color: #daeaf1;
 }
 
+a {
+  text-decoration: none;
+  color: #0a0a0a;
+  cursor: pointer;
+}
+
 /* Users-List style */
 
 .list-container,
@@ -22,12 +28,6 @@ main {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
-}
-
-.list-container a {
-  text-decoration: none;
-  color: #0a0a0a;
-  cursor: pointer;
 }
 
 .user-card {
