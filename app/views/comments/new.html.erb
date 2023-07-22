@@ -1,0 +1,10 @@
+<h1>New Comment</h1>
+
+<%= form_with model: @comment, url: "/users/id/posts/#{params[:post_id]}/comments/create" do |f|%>
+  <div>
+    <%= f.label :text, 'Comment' %>
+    <%= f.text_field :text %>
+  </div>
+  <br/>
+  <%= f.submit "Add Comment" %>
+<% end %>

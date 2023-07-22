@@ -5,6 +5,13 @@
       <h5>Comments: <%=@post.comments_counter%>, Likes: <%=@post.likes_counter%></h5>
       <p><%=@post.text%></p>
     </div>
+    <div>
+      <%= form_with model: @like , url: "/users/#{params[:id]}/posts/#{params[:id]}/likes/create" do |f| %>
+      <%=puts params%>
+        <%= f.submit "Like" %>
+      <% end %>
+      <a href=<%="/users/id/posts/#{@post.id}/comments/new"%>>Comment</a>
+    </div>
     <div class="comments-container">
       <%if @post.comments.empty? %>
         <p>No comments found!</p>
