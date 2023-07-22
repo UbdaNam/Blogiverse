@@ -24,6 +24,12 @@ main {
   gap: 1.5rem;
 }
 
+.list-container a {
+  text-decoration: none;
+  color: #0a0a0a;
+  cursor: pointer;
+}
+
 .user-card {
   display: flex;
   align-items: center;
@@ -65,6 +71,7 @@ main {
   flex-direction: column;
   padding: 0.7rem;
   background-color: var(--primary);
+  border-radius: 10px;
 }
 
 .post-card > h3 {
@@ -78,4 +85,50 @@ main {
 .post-card > h4 {
   font-weight: 300;
   align-self: flex-end;
+}
+
+.user-profile > a {
+  align-self: center;
+}
+
+.see-all-btn {
+  padding: 0.2rem 0.3rem;
+  border-radius: 5px;
+  border: none;
+}
+
+/* User posts style */
+
+.user-posts-container {
+  display: grid;
+  gap: 1rem;
+}
+
+.user-post {
+  display: grid;
+  gap: 0.2rem;
+  align-items: flex-start;
+}
+
+.comments-container {
+  background-color: var(--primary);
+  padding: 0.3rem 1rem;
+  border-radius: 8px;
+}
+
+.pagination {
+  margin-top: 1rem;
+  justify-self: center;
+}
+
+/* single Post style */
+
+.relative {
+  position: relative;
+}
+
+.relative h5 {
+  position: absolute;
+  top: 4%;
+  right: 2%;
 }

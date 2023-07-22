@@ -1,24 +1,15 @@
 <section class="list-container">
   <h1>Users</h1>
-  <div class="user-card">
-    <img src="" alt="user-profile" />
-    <div class="card-info">
-      <h2>User Name</h2>
-      <p>Number of posts: x</p>
-    </div>
-  </div>
-  <div class="user-card">
-    <img src="" alt="user-profile" />
-    <div class="card-info">
-      <h2>User Name</h2>
-      <p>Number of posts: x</p>
-    </div>
-  </div>
-  <div class="user-card">
-    <img src="" alt="user-profile" />
-    <div class="card-info">
-      <h2>User Name</h2>
-      <p>Number of posts: x</p>
-    </div>
-  </div>
+  <% @users.each do |user| %>
+    <%= link_to user_path(user) do %>
+      <div class="user-card">
+        <img src=<%=user.photo%> alt="user-profile" />
+        <div class="card-info">
+          <h2><%=user.name%></h2>
+          <p>Number of posts: <%= user.posts_counter %></p>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
 </section>
+
