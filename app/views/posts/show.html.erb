@@ -6,7 +6,8 @@
       <p><%=@post.text%></p>
     </div>
     <div>
-      <%= form_with model: @like , url: "/users/#{params[:id]}/posts/#{params[:post_id]}/likes/create" do |f| %>
+      <%= form_with model: @like , url: "/users/#{params[:id]}/posts/#{params[:id]}/likes/create" do |f| %>
+      <%=puts params%>
         <%= f.submit "Like" %>
       <% end %>
       <a href=<%="/users/id/posts/#{@post.id}/comments/new"%>>Comment</a>

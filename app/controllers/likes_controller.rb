@@ -6,6 +6,7 @@ class LikesController < ApplicationController
 
     if @like.save
       redirect_to(request.referrer || root_path)
+      puts "SAVED"
     else
       render :new
     end
