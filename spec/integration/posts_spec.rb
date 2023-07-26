@@ -1,16 +1,16 @@
 require 'rails_helper'
 
-RSpec.describe "Posts features", type: :feature do
-
+RSpec.describe 'Posts features', type: :feature do
   describe "User's post index page" do
     before(:each) do
-      @first_user = User.create(name: 'LaLa', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', bio: 'Teacher from Mexico.')
+      @first_user = User.create(name: 'LaLa', photo: 'https://unsplash.com/photos/F_-0BxGuVvo',
+                                bio: 'Teacher from Mexico.')
       @first_post = Post.create(author: @first_user, title: 'Hello', text: 'This is my first post')
       @second_post = Post.create(author: @first_user, title: 'Hello2', text: 'This is my second post')
       @third_post = Post.create(author: @first_user, title: 'Hello3', text: 'This is my third post')
       @fourth_post = Post.create(author: @first_user, title: 'Hello4', text: 'This is my fourth post')
       @fifth_post = Post.create(author: @first_user, title: 'Hello5', text: 'This is my fifth post')
-      @first_comment = Comment.create(post: @first_post, author: @first_user, text: 'Hi Lala!' )
+      @first_comment = Comment.create(post: @first_post, author: @first_user, text: 'Hi Lala!')
     end
 
     it "Displays all user's data" do
@@ -34,5 +34,4 @@ RSpec.describe "Posts features", type: :feature do
       expect(current_path).to eq(user_post_path(@first_user, @first_post))
     end
   end
-
 end

@@ -1,14 +1,15 @@
 require 'rails_helper'
 
-RSpec.describe "Users features", type: :feature do
-
-  describe "user index page" do
+RSpec.describe 'Users features', type: :feature do
+  describe 'user index page' do
     before(:each) do
-      @first_user = User.create(name: 'Alamr', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', bio: 'Teacher from Mexico.')
-      @second_user = User.create(name: 'Tomas', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', bio: 'Teacher from Poland.')
+      @first_user = User.create(name: 'Alamr', photo: 'https://unsplash.com/photos/F_-0BxGuVvo',
+                                bio: 'Teacher from Mexico.')
+      @second_user = User.create(name: 'Tomas', photo: 'https://unsplash.com/photos/F_-0BxGuVvo',
+                                 bio: 'Teacher from Poland.')
     end
 
-    it "Displays all users data" do
+    it 'Displays all users data' do
       visit users_path
       expect(page).to have_content(@first_user.name)
       expect(page).to have_css("img[src='#{@first_user.photo}']")
@@ -24,10 +25,11 @@ RSpec.describe "Users features", type: :feature do
       expect(current_path).to eq(user_path(@first_user))
     end
   end
-  
-  describe "Single user show page" do
+
+  describe 'Single user show page' do
     before(:each) do
-      @first_user = User.create(name: 'LaLa', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', bio: 'Teacher from Mexico.')
+      @first_user = User.create(name: 'LaLa', photo: 'https://unsplash.com/photos/F_-0BxGuVvo',
+                                bio: 'Teacher from Mexico.')
       @first_post = Post.create(author: @first_user, title: 'Hello', text: 'This is my first post')
       @second_post = Post.create(author: @first_user, title: 'Hello2', text: 'This is my second post')
       @third_post = Post.create(author: @first_user, title: 'Hello3', text: 'This is my third post')
@@ -37,7 +39,7 @@ RSpec.describe "Users features", type: :feature do
 
     it "Displays all user's data" do
       visit user_path(@first_user)
-      
+
       expect(page).to have_content(@first_user.name)
       expect(page).to have_css("img[src='#{@first_user.photo}']")
       expect(page).to have_content(@first_user.posts_counter)
@@ -60,5 +62,4 @@ RSpec.describe "Users features", type: :feature do
       expect(current_path).to eq(user_posts_path(@first_user))
     end
   end
-
 end
