@@ -102,6 +102,12 @@ rails db:migrate
 - GitHub: [@UbdaNam](https://github.com/UbdaNam)
 - LinkedIn: [Abdurahim M.](https://www.linkedin.com/in/abdurahim-miftah/)
 
+👤 **Atif Zada**
+
+- GitHub: [@Atif-Zada](https://github.com/AtifZada)
+- LinkedIn: [@Atif-Zada](https://linkedin.com/in/AtifZada)
+
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- FUTURE FEATURES -->
