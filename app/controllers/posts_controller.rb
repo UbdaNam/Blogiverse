@@ -10,7 +10,6 @@ class PostsController < ApplicationController
     @post_id = params[:id]
     @post = User.find(@user_id).posts.find(@post_id)
     @user_name = User.find(@user_id).name
-    puts @post.comments.to_json
   end
 
   def new

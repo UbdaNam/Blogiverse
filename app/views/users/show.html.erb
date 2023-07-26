@@ -12,8 +12,7 @@
     <p><%= @user.bio.slice(0, 200)... %></p>
   </div>
   <div class="post-card-container">
-    <% @user.posts.each_with_index do |post, index| %> 
-      <%if (index < 3) %>
+    <% @user.recent_three.each_with_index do |post, index| %> 
         <%= link_to user_post_path(@user, post) do %>
           <div class="post-card">
             <h3>Post #<%=index + 1%></h3>
@@ -22,13 +21,10 @@
               Comments: <%= post.comments_counter %>, Likes: <%= post.likes_counter %>
             </h4>
           </div>
-        <% end %>
       <% end %> 
     <% end %>
   </div>
-  <%if (@user.posts_counter > 3) %>
     <%= link_to user_posts_path(@user) do %>
       <button class="see-all-btn">See all posts</button>
-    <% end %>
   <%end %>
 </section>
