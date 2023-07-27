@@ -1,4 +1,8 @@
+# Include default devise modules. Others available are:
 class User < ApplicationRecord
+  # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
+  devise :database_authenticatable, :registerable,
+         :recoverable, :rememberable, :validatable, :confirmable
   has_many :posts, foreign_key: :author_id, dependent: :destroy
   has_many :comments, dependent: :destroy
   has_many :likes, dependent: :destroy
@@ -8,5 +12,9 @@ class User < ApplicationRecord
 
   def recent_three
     posts.order(created_at: :desc).limit(3)
+  end
+
+  def active_for_authentication?
+    super && !confirmed_at.nil?
   end
 end
