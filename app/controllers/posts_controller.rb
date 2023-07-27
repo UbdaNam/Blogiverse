@@ -23,10 +23,10 @@ class PostsController < ApplicationController
     @post.comments_counter = 0
 
     if @post.save
-      p "PASSED", @post
+      p 'PASSED', @post
       redirect_to user_post_path(current_user)
     else
-      p "FAILED", @post
+      p 'FAILED', @post
       render :new
     end
   end
