@@ -18,13 +18,15 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.new(post_params)
-    @post.author_id = current_user.id
+    @post.author = current_user
     @post.likes_counter = 0
     @post.comments_counter = 0
 
     if @post.save
-      redirect_to users_path
+      p "PASSED", @post
+      redirect_to user_post_path(current_user)
     else
+      p "FAILED", @post
       render :new
     end
   end

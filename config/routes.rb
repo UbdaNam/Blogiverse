@@ -1,8 +1,11 @@
 Rails.application.routes.draw do
+  devise_for :users
+  
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
-  root "users#index"
+  root to: 'users#index'
+  
   resources :users, only: [:index]
   get '/users/:id/posts/new', to: 'posts#new'
   resources :users, only: [:show] do

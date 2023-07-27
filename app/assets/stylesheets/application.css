@@ -132,3 +132,28 @@ a {
   top: 4%;
   right: 2%;
 }
+
+/* Sign up form */
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.auth-form form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.auth-form .field,
+.auth-form .actions {
+  width: 70%;
+}
+
+.auth-form form input {
+  width: 100%;
+}
