@@ -9,8 +9,8 @@ Rails.application.routes.draw do
     resources :posts, only: [:index, :show]
   end
   post '/users/:id/posts/create', to: 'posts#create'
-  get 'users/:id/posts/:post_id/comments/new', to: 'comments#new'
-  post 'users/:id/posts/:post_id/comments/create', to: 'comments#create'
-  post 'users/:id/posts/:post_id/likes/create', to: 'likes#create'
+  get '/users/:id/posts/:post_id/comments/new', to: 'comments#new'
+  post '/users/:id/posts/:post_id/comments/create', to: 'comments#create'
+  post '/users/:id/posts/:post_id/likes/create', to: 'likes#create'
 
 end

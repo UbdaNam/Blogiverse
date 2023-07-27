@@ -1,13 +1,13 @@
 <section class="single-post">
   <div class="user-post">
     <div class="post-card relative">
-      <h3>Post #<%=@post.id%></h3>
+      <h3>Post #<%=@post.id%>: <%=@post.title%></h3>
+      <p>Author: <%=@user_name%></p>
       <h5>Comments: <%=@post.comments_counter%>, Likes: <%=@post.likes_counter%></h5>
       <p><%=@post.text%></p>
     </div>
     <div>
       <%= form_with model: @like , url: "/users/#{params[:id]}/posts/#{params[:id]}/likes/create" do |f| %>
-      <%=puts params%>
         <%= f.submit "Like" %>
       <% end %>
       <a href=<%="/users/id/posts/#{@post.id}/comments/new"%>>Comment</a>
@@ -17,7 +17,7 @@
         <p>No comments found!</p>
       <% else %>
         <% @post.comments.each do |comment| %>
-          <p><%=@user_name%>: <%=comment.text%></p>
+          <p><%=comment.author.name%>: <%=comment.text%></p>
         <% end %>
       <% end %>
     </div>
