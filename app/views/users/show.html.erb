@@ -1,12 +1,6 @@
 <section class="user-profile">
   <h1>User Profile</h1>
-  <div class="user-card">
-  <img src=<%=@user.photo%> alt="user-profile" />
-  <div class="card-info">
-      <h2><%=@user.name%></h2>
-      <p>Number of posts: <%= @user.posts_counter %></p>
-    </div>
-  </div>
+  <%= render 'user_card', user: @user %>
   <div class="profile-bio">
     <h3>Bio</h3>
     <p><%= @user.bio.slice(0, 200)... %></p>
